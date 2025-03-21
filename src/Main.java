@@ -3,28 +3,29 @@ import java.util.HashMap;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Hello, World!");
+
         int[] input  =   {25, 14, 9, 7, 5, 3, 0, 21, 6, 33, 25, 42, 24, 107};
         String[] input1 = {"google", "gojo", "amazingly", "jogo", "luna",
                             "pup", "solas", "solo", "pupperino", "amaterasu",
                              "amazon", "puppy", "hydra", "amazonia", "vueltiao"};
          int i = 0;
 
+         System.out.println("Hashing Results");
          for(int x: input){
              System.out.print(hash(x) + " ");
          }
+         System.out.println('\n');
 
-         System.out.println(hash(52));
-
+System.out.println("Unsorted String list");
         for(String x: input1){
             System.out.println(x);
         }
 
         input1 = radixSort(input1);
+        System.out.println('\n');
+        System.out.println("The Sorted String list using Radix Sort" + '\n');
 
-        System.out.println("AAAAffffter" + '\n');
         for(String x: input1){
-
             System.out.println(x);
         }
 
@@ -32,10 +33,31 @@ public class Main {
         char delim = '?';
         String s = "dog?cat?cat?dog";
 
+        String p1 = "aaaa";
+        char delimiter =  ',';
+        String s1 = "dog,cat,cat,dog";
 
+        String p2 = "aaaa";
+        char delimiter1  = ' ';
+        String s2 = "ice cream taco day";
+
+
+        String  p3 = "adxp";
+        char delimiter2 = ' ';
+        String s3 = "ice cream taco day";
+
+
+
+
+        System.out.println("\n Word Pattern");
 
             System.out.println(wordPattern(p, delim, s));
 
+            System.out.println(wordPattern(p1, delimiter, s1));
+
+            System.out.println(wordPattern(p2, delimiter1, s2));
+
+            System.out.println(wordPattern(p3, delimiter2, s3));
 
     }
 
@@ -115,9 +137,8 @@ public class Main {
         String delimiter = "\\" + delim;
         String[] strings = s.split(String.valueOf(delimiter));
 
-        for(String y: strings){
-            System.out.println(strings.length);
-        }
+        System.out.println("Pattern P: " + p + " " + "Deliminter : " + delim +
+                " " + "String Input: " + s);
 
 
         if(strings.length != p.length()){
